@@ -8,7 +8,8 @@ class CreateShops < ActiveRecord::Migration
       t.string :address
       t.string :city
       t.string :zip
-      t.stringcountry_code :phone
+      t.string :country_code
+      t.string :phone
 
       t.timestamps null: false
     end
