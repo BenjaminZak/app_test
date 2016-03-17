@@ -1,26 +1,45 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <%= link_to new_shop_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Shop
+  <% end %>
+  <h1>Listing shops</h1>
+</div>
 
-<h1>Listing Shops</h1>
-
-  <tbody>
-    <% @shops.each do |shop| %>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
       <tr>
-        <td><%= shop.chain %></td>
-        <td><%= shop.name %></td>
-        <td><%= shop.latitude %></td>
-        <td><%= shop.longitude %></td>
-        <td><%= shop.address %></td>
-        <td><%= shop.city %></td>
-        <td><%= shop.zip %></td>
-        <td><%= shop.phone %></td>
-        <td><%= link_to 'Show', shop %></td>
-        <td><%= link_to 'Edit', edit_shop_path(shop) %></td>
-        <td><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %></td><br><br>
+            <th>Chain</th>
+            <th>Name</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Zip</th>
+            <th>Country code</th>
+            <th>Phone</th>
+            <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Shop', new_shop_path %>
+    <tbody>
+      <%= content_tag_for(:tr, @shops) do |shop| %>
+            <td><%= shop.chain %></td>
+            <td><%= shop.name %></td>
+            <td><%= shop.latitude %></td>
+            <td><%= shop.longitude %></td>
+            <td><%= shop.address %></td>
+            <td><%= shop.city %></td>
+            <td><%= shop.zip %></td>
+            <td><%= shop.country_code %></td>
+            <td><%= shop.phone %></td>
+            <td><%= link_to 'Show', shop %></td>
+        <td><%= link_to 'Edit', edit_shop_path(shop) %></td>
+        <td><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
