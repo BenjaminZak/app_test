@@ -1,44 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <%= link_to shops_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_shop_path(@shop), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show shop</h1>
+</div>
 
-<p>
-  <strong>Chain:</strong>
-  <%= @shop.chain %>
-</p>
+<dl class="dl-horizontal">
+  <dt>Chain:</dt>
+  <dd><%= @shop.chain %></dd>
 
-<p>
-  <strong>Name:</strong>
-  <%= @shop.name %>
-</p>
+  <dt>Name:</dt>
+  <dd><%= @shop.name %></dd>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @shop.latitude %>
-</p>
+  <dt>Latitude:</dt>
+  <dd><%= @shop.latitude %></dd>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @shop.longitude %>
-</p>
+  <dt>Longitude:</dt>
+  <dd><%= @shop.longitude %></dd>
 
-<p>
-  <strong>Address:</strong>
-  <%= @shop.address %>
-</p>
+  <dt>Address:</dt>
+  <dd><%= @shop.address %></dd>
 
-<p>
-  <strong>City:</strong>
-  <%= @shop.city %>
-</p>
+  <dt>City:</dt>
+  <dd><%= @shop.city %></dd>
 
-<p>
-  <strong>Zip:</strong>
-  <%= @shop.zip %>
-</p>
+  <dt>Zip:</dt>
+  <dd><%= @shop.zip %></dd>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @shop.phone %>
-</p>
+  <dt>Country code:</dt>
+  <dd><%= @shop.country_code %></dd>
 
-<%= link_to 'Edit', edit_shop_path(@shop) %> |
-<%= link_to 'Back', shops_path %>
+  <dt>Phone:</dt>
+  <dd><%= @shop.phone %></dd>
+
+</dl>
